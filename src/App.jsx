@@ -36,10 +36,17 @@ const App = () => {
 
   return (
     <div>
+
+       <p><a href='https://github.com/TheYautja/mockAPI'>Código disponível aqui</a></p>
+  
+
+
       <h1>consumo de API -- Augusto</h1>
       <UserForm onSave={userToEdit ? handleEditUser : handleCreateUser} userToEdit={userToEdit} />
       <UserList users={users} onEdit={setUserToEdit} onDelete={handleFimUser} />
     </div>
+
+    
   );
 };
 
