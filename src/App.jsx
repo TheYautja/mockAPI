@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { listaUsers, criarUser, updateUser, fimUser } from './services/api';
 import UserForm from './comp/UserForm';
 import UserList from './comp/UserList';
-import './App.css';
+
 
 const App = () => {
   const [users, setUsers] = useState([]);
