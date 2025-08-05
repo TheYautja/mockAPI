@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { listaUsers, criarUser, updateUser, fimUser } from './services/api';
 import UserForm from './comp/UserForm';
 import UserList from './comp/UserList';
-import "./App.css"
+import './App.css';
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -35,19 +35,24 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center p-6">
+      <p className="text-gray-600 mb-4">
+        <a href='https://github.com/TheYautja/mockAPI' className="text-blue-500 hover:underline">Código disponível aqui</a>
+      </p>
+      <h1 className="text-4xl font-bold text-gray-800 mb-8">Consumo de API - Augusto</h1>
 
-       <p><a href='https://github.com/TheYautja/mockAPI'>Código disponível aqui</a></p>
-  
+      <UserForm 
+        onSave={userToEdit ? handleEditUser : handleCreateUser} 
+        userToEdit={userToEdit} 
+      />
 
-
-      <h1>consumo de API -- Augusto</h1>
-      <UserForm onSave={userToEdit ? handleEditUser : handleCreateUser} userToEdit={userToEdit} />
-      <UserList users={users} onEdit={setUserToEdit} onDelete={handleFimUser} />
+      <UserList 
+        users={users} 
+        onEdit={setUserToEdit} 
+        onDelete={handleFimUser} 
+      />
     </div>
-
-    
   );
 };
 
-export default App
+export default App;
